@@ -1,0 +1,38 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: white;
+  background: rgb(51, 153, 153);
+}
+
+.banner-img {
+  margin: 10px;
+  height: 100px;
+}
+
+.banner-text {
+  font-size: 50px;
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+
+.video {
+  max-width:  100%;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+fieldset {
+	border: none;
+}

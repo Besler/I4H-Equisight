@@ -1,0 +1,1 @@
+from .equisight import app
