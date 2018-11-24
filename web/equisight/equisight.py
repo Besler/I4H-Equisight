@@ -22,6 +22,4 @@ def index():
 @app.route('/video_feed')
 def video_feed():
     f = camera.get_frame()
-    return Response(f,
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
-
+    return Response(f, mimetype='multipart/x-mixed-replace; boundary=frame')

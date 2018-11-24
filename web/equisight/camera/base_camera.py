@@ -8,15 +8,16 @@ class BaseCamera(Thread):
     EMPTY_FRAME = bytes(0)
 
     def put(self, frame):
-        self.mutex.acquire()
-        self._frame = frame
-        self.mutex.release()
+        with self.mutex:
+            self._frame = frame
 
     def get(self):
-        self.mutex.acquire()
-        frame = self._frame
-        self.mutex.release()
+        with self.mutex:
+            frame = self._frame
         return frame
+
+    def get_size(self):
+        raise NotImplementedError('Calling base camera class')
 
     def __init__(self):
         Thread.__init__(self)

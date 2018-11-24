@@ -13,9 +13,9 @@ class CameraModel(object):
   def get_cameras(self):
     return list(self.cameras_dict.keys())
 
-  def register_camera(self, name, path, file):
+  def register_camera(self, name, path, file_name):
     if name not in self.cameras_dict:
-      self.cameras_dict[name] = [path, file]
+      self.cameras_dict[name] = [path, file_name]
 
   def set_camera(self, name):
     (module_name, this_class) = self.cameras_dict[name]
