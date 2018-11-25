@@ -31,5 +31,5 @@ def screen_shot():
         req_data = request.get_json(force=True)
         if 'file_name' in req_data:
             file_name = req_data['file_name']
-            camera.screenshot(file_name)
+            camera.screenshot(os.path.join(app.instance_path, 'images'), file_name)
     return 'Writing file {}\n'.format(file_name)

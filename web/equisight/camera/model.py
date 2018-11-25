@@ -1,6 +1,7 @@
 
 import importlib
 from .view import View
+from .screenshot import Screenshot
 
 class CameraModel(object):
   '''Object for factory method of retreiving a camera model'''
@@ -32,5 +33,6 @@ class CameraModel(object):
         frame = self.camera.EMPTY_FRAME
       yield self.view.format(frame)
 
-  def screenshot(self, file_name):
-    pass
+  def screenshot(self, directory, file_name):
+    s = Screenshot(directory, file_name, self.camera.get())
+    s.start()

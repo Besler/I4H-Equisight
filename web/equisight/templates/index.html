@@ -1,7 +1,9 @@
 <html>
   <head>
     <!-- CSS -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/style.css') }}?version=5.4">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/style.css') }}?version=6.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='javascript/posts.js') }}?version=10.5"></script>
   </head>
 
   <!-- body -->
@@ -17,5 +19,11 @@
       <div class="video">
         <img src="{{ url_for('video_feed') }}" class="video">
       </div>
+
+      <form name="screenshot_form" action="javascript:screenshot(file_name.value)">
+        File name:
+        <input type="text" name="file_name" id="file_name"/><br>
+        <input type="submit" name="Screenshot" value="Screenshot"/>
+      </form>
   </body>
 </html>
