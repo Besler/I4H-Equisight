@@ -31,3 +31,6 @@ class CameraModel(object):
       else:
         frame = self.camera.EMPTY_FRAME
       yield self.view.format(frame)
+
+  def screenshot(self, file_name):
+    pass
