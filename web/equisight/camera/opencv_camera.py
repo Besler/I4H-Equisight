@@ -14,6 +14,7 @@ class OpenCVCamera(BaseCamera):
             print('OpenCVCamera: Camera is {}'.format('open' if self.camera.isOpened() else 'closed'))
             self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
             self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 1024)
+            self.camera.set(cv2.CAP_PROP_FPS, 120)
         print('OpenCVCamera: Camera size {}'.format(self.get_size()))
 
     def close_camera(self):
